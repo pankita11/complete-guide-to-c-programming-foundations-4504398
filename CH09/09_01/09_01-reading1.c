@@ -2,20 +2,28 @@
 
 int main()
 {
-	const char filename[] = "sonnet18.txt";
-	FILE *fh;
-
-	/* open the file */
-	fh = fopen(filename,"r");
-	if( fh == NULL )
+	const char filename[] = "09_01-reading2.c";
+	FILE *fp;
+	fp = fopen(filename, "r");
+	if (fp == NULL)
 	{
-		printf("Unable to read from file %s\n",filename);
-		return(1);
+		printf("file did not open\n");
+		return (1);
 	}
-	
-	printf("File '%s' opened\n",filename);
+	else
+	{
+		// read from file
+		int ch;
+		while (1)
+		{
+			ch = fgetc(fp);
+			if (ch == EOF)
+				break;
+			putchar(ch);
+		}
+		fclose(fp);
+		printf("file closed\n");
+	}
 
-	/* clean-up */
-	fclose(fh);
-	return(0);
+	return 0;
 }

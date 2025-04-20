@@ -3,17 +3,18 @@
 
 int main()
 {
-	char password[] = "secret\n";
+	char password[10] = "interview";
 	char input[10];
 
-	printf("Password: ");
-	fgets(input,10,stdin);
+	printf("Password please: ");
+	fgets(input, sizeof(input), stdin);
 
-	if( strcmp(password,input)==0 )
-		puts("Entry granted!");
+	if (strcmp(password, input) == 0)
+	{
+		printf("Entry granted\n");
+	}
 	else
-		puts("Incorrect password!");
+		printf("Entry denied\n");
 
-	return(0);
+	return (0);
 }
-

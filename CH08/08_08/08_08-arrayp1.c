@@ -2,11 +2,11 @@
 
 int main()
 {
-	char *veeps[5] = { "Adams", "Jefferson", "Burr", "Clinton", "Gerry" };
+	char* veeps[5] = { "Adams", "Jefferson", "Burr", "Clinton", "Gerry" };
 	int x;
 
 	for(x=0;x<5;x++)
-		printf("%s\n",veeps[x]);
+		printf("%s\n",*(veeps + x));
 
 	return(0);
 }

@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main()
 {
-	int x,r;
+	time_t now;
 
-	for(x=0;x<10;x++)
+	for (int i = 0; i < 10; i++)
 	{
-		r = rand();
-		printf("%d\n",r);
+		printf("time now: %d\n ", (int)time(&now));
+		srand((int)time(&now));
+		printf("Rand number: %d \n", (rand() % 100) + 1);
+		sleep(1);
 	}
-
-	return(0);
+	return (0);
 }

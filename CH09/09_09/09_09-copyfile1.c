@@ -1,31 +1,23 @@
 #include <stdio.h>
 
-int filecopy(char *org,char *dup)
+int filecopy(char *org, char *dup)
 {
-	FILE *o,*d;
-	int c;
+	FILE *o;
+	FILE *d;
 
-	/* open/create the files */
-	o = fopen(org,"r");
-	d = fopen(dup,"w");
-	if( org==NULL || dup==NULL)
-	{
-		return(-1);
-	}
+	o = fopen(org, "r");
+	d = fopen(dup, "w");
 
-	/* read/write to copy the file */
-	while(1)
+	int ch;
+	while (1)
 	{
-		c = fgetc(o);
-		if( c == EOF )
+		ch = fgetc(o);
+		if (ch == EOF)
 			break;
-		fputc(c,d);
+		fputc(ch, d);
 	}
 
-	/* clean-up */
-	fclose(o);
-	fclose(d);
-	return(0);
+	return 0;
 }
 
 int main()
@@ -34,11 +26,11 @@ int main()
 	char duplicate[] = "betacopy.txt";
 	int r;
 
-	r = filecopy(original,duplicate);
-	if( r==-1 )
+	r = filecopy(original, duplicate);
+	if (r == -1)
 		puts("Unable to copy files");
 	else
-		printf("%s copied to %s\n",original,duplicate);
+		printf("%s copied to %s\n", original, duplicate);
 
-	return(0);
+	return (0);
 }

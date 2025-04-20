@@ -3,11 +3,8 @@
 
 int main()
 {
-	time_t now;
+	time_t timenow;
+	printf("The time now is: %s \n", ctime(&(*(time(&timenow)))));
 
-	time(&now);
-	printf("It's now %ld\n",now);
-
-	return(0);
+	return (0);
 }
-

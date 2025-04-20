@@ -4,16 +4,16 @@
 int main()
 {
 	time_t now;
-	struct tm *timestamp;
-
 	time(&now);
+
+	struct tm *timestamp;
 	timestamp = localtime(&now);
-	printf("It's now %d:%02d:%02d\n",
-			timestamp->tm_hour,
-			timestamp->tm_min,
-			timestamp->tm_sec
-		  );
+	const char* weekday[] = {"Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"};
 
-	return(0);
+	printf("The time is: %d:%d:%d \n",
+				 timestamp->tm_hour, timestamp->tm_min, timestamp->tm_sec);
+	printf("Its %s\n", weekday[timestamp->tm_wday]);
+	printf("The year is: %d \n", timestamp->tm_year + 1900);
+
+	return (0);
 }
-

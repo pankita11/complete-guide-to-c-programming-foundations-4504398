@@ -6,44 +6,37 @@
 
 int main()
 {
-	int done,ch;
-			
+	int done;
+	char ch;
+
 	/* main program loop */
 	done = FALSE;
-	while(!done)
+	while (!done)
 	{
-		printf("Command: ");
+		printf("Enter Command: ");
 		ch = getchar();
-		switch( ch )
+		switch (ch)
 		{
-			case 'R':
-			case 'r':
-				puts("Move right");
-				break;
-			case 'L':
-			case 'l':
-				puts("Move left");
-				break;
-			case 'B':
-			case 'b':
-				puts("Move back");
-				break;
-			case 'Q':
-			case 'q':
-				done = TRUE;
-				puts("Goodbye!");
-				break;
-			case 'H':
-			case 'h':
-			case '?':
-				puts("You may go (R)ight, (L)eft, or (B)ack");
-				puts("Or you can (Q)uit");
-				break;
-			default:
-				puts("I don't know that command");
+		case 'R':
+		case 'r':
+			puts("Move right");
+			break;
+		case 'L':
+		case 'l':
+			puts("Move left");
+			break;
+		case 'Q':
+		case 'q':
+			puts("Alright goodbye!");
+			done = TRUE;
+			break;
+		default:
+			puts("Invalid input. please input R or L");
+			break;
 		}
-		while( (ch=getchar()) !='\n' )
-			;
+		while ((ch = getchar()) != '\n')
+		{
+		};
 	}
 
 	return 0;

@@ -2,6 +2,16 @@
 
 void line(void);
 
+void line()
+{
+	int i = 0;
+	while (i < 40)
+	{
+		putchar('-');
+		i++;
+	}
+	putchar('\n');
+}
 int main()
 {
 	puts("How to Fight Off a Robot Attack");
@@ -9,14 +19,5 @@ int main()
 	puts("A Survival Guide for the 21st Century");
 	line();
 
-	return(0);
-}
-
-void line(void)
-{
-	int a;
-
-	for(a=0;a<40;a++)
-		putchar('-');
-	putchar('\n');
+	return (0);
 }
